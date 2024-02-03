@@ -9,8 +9,8 @@ return {
       vim.cmd [[ colorscheme gruvbox-material ]]
     end
   },
-  { "Mofiqul/vscode.nvim", lazy = true },
-  { "olimorris/onedarkpro.nvim", lazy = true },
+  { "Mofiqul/vscode.nvim" },
+  { "olimorris/onedarkpro.nvim" },
 
   --file explorer
   {
@@ -31,6 +31,16 @@ return {
       -- empty setup using defaults
       require("nvim-tree").setup()
     end
+  },
+  {
+    "antosha417/nvim-lsp-file-operations",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-tree.lua",
+    },
+    config = function()
+      require("lsp-file-operations").setup()
+    end,
   },
 
   --fuzzy finder
